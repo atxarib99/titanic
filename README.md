@@ -56,7 +56,7 @@ I used four different methods to predict labels.
 
 I helped build a Feed Forward Neural Network with some friends. Its base code can be found at: [Neural Network](https://github.com/aviguptatx/SecretHitlerAI/blob/master/NeuralNet.py)
 
-Some positives about neural networks is that they can model complex models better than simpler methods such as SVMs or kNNs. There are several libraries available such as PyTorch or TensorFlow where you can setup a neural network that will run much more efficiently, however we decided to make our own for sake of learning. We used a neural network structure of a 10 node input layer, 5 node hidden layer, and a 1 node output layer. Neural Networks are good for solving a variety of problems but it proved to be suboptimal for our case.
+Some positives about neural networks is that they can model complex models better than simpler methods such as SVMs or kNNs. There are several libraries available such as PyTorch or TensorFlow where you can setup a neural network that will run much more efficiently, however we decided to make our own for sake of learning. We used a neural network structure of a 10 node input layer, 6 node hidden layer, and a 1 node output layer. Neural Networks are good for solving a variety of problems but it proved to be suboptimal for our case.
 
 ## SVM with Slack
 
