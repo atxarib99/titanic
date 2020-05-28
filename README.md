@@ -42,13 +42,15 @@ For Embarked we use a one hot input technique. So instead of having 1 input repr
 After we have quanitfied each input parameter, we normalize the inputs so that every input is from range [0-1], this will allow us to learn weights easier. This is because age only ranges from  0 though 80 while the fare can range from 0 through 512. So if we assign weights to these as they are, then fare is already weighted higher because it has a higher range. For example, for weight .75, the age can only be weighted at maximum 60 while fare can be weighted to 384. The learner must then compensate for this difference.
 
 ## The Results
-I used three different methods to predict labels.
+
+I used four different methods to predict labels.
 
 | Name | Accuracy |
 | ---- | ---- |
 | Neural Network | 0.78648 |
 | SVM with Slack | 0.77511 |
 | kNN (k-Nearest Neighbor) | 0.79904 |
+| scikit-learn Perceptron | 0.78648 |
 
 ## Neural Networks
 
@@ -72,6 +74,12 @@ This method is relatively very simple. The idea with kNNs is to find training ex
 
 kNN works well with the titanic set since it is relatively simple. It can easily find training examples close to the test example and make a decent prediction. For more complicated problems, all the training examples will be very far from each other so when a test case tries to make a prediction its "closest" k examples are actually very far and not similar to itself at all, thus making an inaccurate guess.
 
+## scikit-learn Perception
+
+I thought that it would be a good idea to compare results with a well known machine learning library. Here I chose to use scikit-learn's library since it is both very well known and easy to use. After importing the library and researching how to use it, I found out that I modeled my machine learning classes very similarly, although scikit is still quite a bit smarter at predicting what the user wanted and its a bit easier to use than my libraries.
+
+scikit's documentation available on their website lays out an easy guide of how to setup the perceptron class and get to making predictions quickly. Without even adding regularization parameters it performed just as well as the neural network.
+
 ## Time and space required to learn
 
 Learning time is important in some cases, here our project is not time sensitive and we can spend more time learning weights for a better accuracy, but let's discuss time to learn anyways so we can compare the methods to each other.
@@ -82,6 +90,7 @@ The SVM solution, learning both weights as well as hyperparameters takes roughly
 
 Lastly the kNN algorithm takes 6 seconds to run. Here it is not learning weights just setting up the prediction environment, but it is learning the k hyperparameter within this time. It also yields the best accuracy. However, it should be noted that this is the least memory efficient method since it needs to keep all the training examples in memory to compare to. To make a prediction it has a time of O(nm), where n is number of training examples, and m is number of parameters.
 
+Sci-kit took almost no noticable time to learn due to the fact that it is highly optimized by a number of professionals. I was not able to capture the memory footprint of the library however I may do some research into it in the future.
 
 ## Author
 
