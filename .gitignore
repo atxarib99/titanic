@@ -1,0 +1,9 @@
+knn/
+
+SVM/
+
+.vscode/
+
+__pycache__/
+
+*out.csv
